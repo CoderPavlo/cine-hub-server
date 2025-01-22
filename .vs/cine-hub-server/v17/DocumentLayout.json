@@ -1,12 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pavlo\\source\\repos\\cine-hub-server\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|c:\\users\\\u0444\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|c:\\users\\\u0444\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "cine-hub-server\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T09:20:14.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "cine-hub-server\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "cine-hub-server\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-22T09:20:06.632Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
