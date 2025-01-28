@@ -1,38 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\",
+  "WorkspaceRootPath": "D:\\SoftServe_Practice\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Models\\Ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250128213403_FirstCreateTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Migrations\\20250128213403_FirstCreateTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Models\\Session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\models\\filmgenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\models\\filmgenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Auditorium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Models\\Auditorium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Models\\Cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\data_access\\cinedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\data_access\\cinedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\FilmGenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Models\\FilmGenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Models\\Genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Models\\Film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\cine-hub-server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\cine-hub-server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,113 +37,81 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\User.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\User.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAoAAAA",
+              "DocumentIndex": 1,
+              "Title": "20250128213403_FirstCreateTables.cs",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250128213403_FirstCreateTables.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Migrations\\20250128213403_FirstCreateTables.cs",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250128213403_FirstCreateTables.cs",
+              "RelativeToolTip": "cine-hub-server\\Migrations\\20250128213403_FirstCreateTables.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T15:34:44.825Z",
+              "WhenOpened": "2025-01-28T21:34:04.165Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Ticket.cs",
-              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Ticket.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\Ticket.cs",
-              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Ticket.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\Ticket.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T15:34:22.557Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Session.cs",
-              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Session.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\Session.cs",
-              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Session.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\Session.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAkwBQAAAAAAAAA",
+              "Title": "FilmGenre.cs",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Models\\FilmGenre.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Models\\FilmGenre.cs",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Models\\FilmGenre.cs",
+              "RelativeToolTip": "cine-hub-server\\Models\\FilmGenre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T15:33:43.011Z"
+              "WhenOpened": "2025-01-28T21:30:14.842Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Auditorium.cs",
-              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Auditorium.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\Auditorium.cs",
-              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Auditorium.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\Auditorium.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Program.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Program.cs",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Program.cs",
+              "RelativeToolTip": "cine-hub-server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T15:33:18.266Z"
+              "WhenOpened": "2025-01-28T21:20:06.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\appsettings.json",
+              "RelativeDocumentMoniker": "cine-hub-server\\appsettings.json",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\appsettings.json",
+              "RelativeToolTip": "cine-hub-server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-25T19:00:35.499Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Cinema.cs",
-              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Cinema.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\Cinema.cs",
-              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Cinema.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\Cinema.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Title": "CineDbContext.cs",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Data_access\\CineDbContext.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Data_access\\CineDbContext.cs",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Data_access\\CineDbContext.cs",
+              "RelativeToolTip": "cine-hub-server\\Data_access\\CineDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA/wBsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T15:32:49.493Z"
+              "WhenOpened": "2025-01-25T18:54:15.526Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "FilmGenre.cs",
-              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\FilmGenre.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\FilmGenre.cs",
-              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\FilmGenre.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\FilmGenre.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T15:32:23.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Genre.cs",
-              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Genre.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\Genre.cs",
-              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Genre.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\Genre.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T15:31:50.846Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Film.cs",
-              "DocumentMoniker": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Film.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\Film.cs",
-              "ToolTip": "C:\\Users\\\u0424\u0432\u044C\u0448\u0442\\source\\repos\\cine-hub-server\\cine-hub-server\\Models\\Film.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\Film.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAYwAsAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T15:26:38.177Z"
+              "Title": "cine-hub-server.csproj",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\cine-hub-server.csproj",
+              "RelativeDocumentMoniker": "cine-hub-server\\cine-hub-server.csproj",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\cine-hub-server.csproj",
+              "RelativeToolTip": "cine-hub-server\\cine-hub-server.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-25T18:04:32.219Z"
             }
           ]
         }

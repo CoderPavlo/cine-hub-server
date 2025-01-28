@@ -1,7 +1,10 @@
-﻿namespace cine_hub_server.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace cine_hub_server.Models
 {
     public class FilmGenre
     {
+        [Key]
         public string FilmId { get; set; }
         public Film Film { get; set; }
 
