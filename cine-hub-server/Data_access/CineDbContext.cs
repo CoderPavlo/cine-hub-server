@@ -1,22 +1,35 @@
 ﻿using cine_hub_server.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Configuration;
+using System.Reflection.Emit;
 
 namespace cine_hub_server.Data_access
 {
-    public class CineDbContext : DbContext
+    public class CineDbContext : IdentityDbContext<User>
     {
-        protected readonly IConfiguration Configuration;
-
-        public CineDbContext(IConfiguration configuration)
-        {
-            Configuration = configuration;
+        
+        public CineDbContext(DbContextOptions<CineDbContext> options)
+            : base(options) 
+        { 
         }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
 
-            options.UseNpgsql(Configuration.GetConnectionString("WebApiDatabase"));
+            builder.HasDefaultSchema("identity");
+            
+            builder.Entity<Cinema>().ToTable("Cinemas", "app");
+            builder.Entity<Film>().ToTable("Films", "app");
+            builder.Entity<Ticket>().ToTable("Tickets", "app");
+            builder.Entity<Genre>().ToTable("Genres", "app");
+            builder.Entity<FilmGenre>().ToTable("FilmGenres", "app");
+            builder.Entity<Session>().ToTable("Sessions", "app");
+            builder.Entity<Auditorium>().ToTable("Auditoriums", "app");
+            builder.Entity<User>().ToTable("Users", "app");
+
+
         }
         public DbSet<Auditorium> Auditoriums { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
@@ -25,7 +38,7 @@ namespace cine_hub_server.Data_access
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Session> Sessions { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<User> Users { get; set; }
+
 
     }
 }
