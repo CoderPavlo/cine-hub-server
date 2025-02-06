@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using cine_hub_server.Data_access;
@@ -11,9 +12,11 @@ using cine_hub_server.Data_access;
 namespace cine_hub_server.Migrations
 {
     [DbContext(typeof(CineDbContext))]
-    partial class CineDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250206155255_AddSessionAudTable")]
+    partial class AddSessionAudTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -285,13 +288,12 @@ namespace cine_hub_server.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
-                    b.Property<string>("AuditoriumId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("CinemaId")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateOnly>("EndDate")
+                        .HasColumnType("date");
 
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("timestamp with time zone");
@@ -311,18 +313,34 @@ namespace cine_hub_server.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
+                    b.Property<DateOnly>("StartDate")
+                        .HasColumnType("date");
+
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AuditoriumId");
 
                     b.HasIndex("CinemaId");
 
                     b.HasIndex("FilmId");
 
                     b.ToTable("Sessions", "app");
+                });
+
+            modelBuilder.Entity("cine_hub_server.Models.SessionAuditorium", b =>
+                {
+                    b.Property<string>("SessionId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("AuditoriumId")
+                        .HasColumnType("text");
+
+                    b.HasKey("SessionId", "AuditoriumId");
+
+                    b.HasIndex("AuditoriumId");
+
+                    b.ToTable("SessionAuditoriums", "app");
                 });
 
             modelBuilder.Entity("cine_hub_server.Models.Ticket", b =>
@@ -512,12 +530,6 @@ namespace cine_hub_server.Migrations
 
             modelBuilder.Entity("cine_hub_server.Models.Session", b =>
                 {
-                    b.HasOne("cine_hub_server.Models.Auditorium", "Auditorium")
-                        .WithMany("Sessions")
-                        .HasForeignKey("AuditoriumId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("cine_hub_server.Models.Cinema", "Cinema")
                         .WithMany()
                         .HasForeignKey("CinemaId")
@@ -530,11 +542,28 @@ namespace cine_hub_server.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Auditorium");
-
                     b.Navigation("Cinema");
 
                     b.Navigation("Film");
+                });
+
+            modelBuilder.Entity("cine_hub_server.Models.SessionAuditorium", b =>
+                {
+                    b.HasOne("cine_hub_server.Models.Auditorium", "Auditorium")
+                        .WithMany("SessionAuditoriums")
+                        .HasForeignKey("AuditoriumId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("cine_hub_server.Models.Session", "Session")
+                        .WithMany("SessionAuditoriums")
+                        .HasForeignKey("SessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Auditorium");
+
+                    b.Navigation("Session");
                 });
 
             modelBuilder.Entity("cine_hub_server.Models.Ticket", b =>
@@ -558,7 +587,7 @@ namespace cine_hub_server.Migrations
 
             modelBuilder.Entity("cine_hub_server.Models.Auditorium", b =>
                 {
-                    b.Navigation("Sessions");
+                    b.Navigation("SessionAuditoriums");
                 });
 
             modelBuilder.Entity("cine_hub_server.Models.Cinema", b =>
@@ -580,6 +609,8 @@ namespace cine_hub_server.Migrations
 
             modelBuilder.Entity("cine_hub_server.Models.Session", b =>
                 {
+                    b.Navigation("SessionAuditoriums");
+
                     b.Navigation("Tickets");
                 });
 
