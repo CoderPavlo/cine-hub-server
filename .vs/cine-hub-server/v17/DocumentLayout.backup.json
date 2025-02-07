@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "D:\\SoftServe_Practice\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\data_access\\cinedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\data_access\\cinedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250203172104_IdentityAside.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Migrations\\20250203172104_IdentityAside.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\models\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\models\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\models\\auditorium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\models\\auditorium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250203165044_WithIdentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Migrations\\20250203165044_WithIdentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\data_access\\cinedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\data_access\\cinedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\cine-hub-server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\cine-hub-server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250206155255_AddSessionAudTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cine-hub-server\\Migrations\\20250206155255_AddSessionAudTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|d:\\softserve_practice\\cine-hub-server\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55F5B5C7-1610-450A-9633-EF2D18C37E92}|cine-hub-server\\cine-hub-server.csproj|solutionrelative:cine-hub-server\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20250203172104_IdentityAside.cs",
-              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250203172104_IdentityAside.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Migrations\\20250203172104_IdentityAside.cs",
-              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250203172104_IdentityAside.cs",
-              "RelativeToolTip": "cine-hub-server\\Migrations\\20250203172104_IdentityAside.cs",
+              "DocumentIndex": 4,
+              "Title": "20250206155255_AddSessionAudTable.cs",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250206155255_AddSessionAudTable.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Migrations\\20250206155255_AddSessionAudTable.cs",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250206155255_AddSessionAudTable.cs",
+              "RelativeToolTip": "cine-hub-server\\Migrations\\20250206155255_AddSessionAudTable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:21:04.134Z",
+              "WhenOpened": "2025-02-06T15:52:55.453Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Auditorium.cs",
               "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Models\\Auditorium.cs",
               "RelativeDocumentMoniker": "cine-hub-server\\Models\\Auditorium.cs",
               "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Models\\Auditorium.cs",
               "RelativeToolTip": "cine-hub-server\\Models\\Auditorium.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:05:05.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20250203165044_WithIdentity.cs",
-              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250203165044_WithIdentity.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Migrations\\20250203165044_WithIdentity.cs",
-              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Migrations\\20250203165044_WithIdentity.cs",
-              "RelativeToolTip": "cine-hub-server\\Migrations\\20250203165044_WithIdentity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:50:44.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "cine-hub-server.csproj",
-              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\cine-hub-server.csproj",
-              "RelativeDocumentMoniker": "cine-hub-server\\cine-hub-server.csproj",
-              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\cine-hub-server.csproj",
-              "RelativeToolTip": "cine-hub-server\\cine-hub-server.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-03T16:05:27.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Models\\User.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Models\\User.cs",
-              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Models\\User.cs",
-              "RelativeToolTip": "cine-hub-server\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T14:21:11.821Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Program.cs",
-              "RelativeDocumentMoniker": "cine-hub-server\\Program.cs",
-              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Program.cs",
-              "RelativeToolTip": "cine-hub-server\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T14:16:02.954Z",
+              "WhenOpened": "2025-02-06T15:40:48.472Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Session.cs",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Models\\Session.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Models\\Session.cs",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Models\\Session.cs",
+              "RelativeToolTip": "cine-hub-server\\Models\\Session.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T15:22:52.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CineDbContext.cs",
               "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Data_access\\CineDbContext.cs",
               "RelativeDocumentMoniker": "cine-hub-server\\Data_access\\CineDbContext.cs",
               "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Data_access\\CineDbContext.cs",
               "RelativeToolTip": "cine-hub-server\\Data_access\\CineDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T14:15:11.734Z",
+              "WhenOpened": "2025-02-06T15:20:01.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Repositories\\GenericRepository.cs",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "cine-hub-server\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T15:17:59.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "D:\\SoftServe_Practice\\cine-hub-server\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "cine-hub-server\\Interfaces\\IRepository.cs",
+              "ToolTip": "D:\\SoftServe_Practice\\cine-hub-server\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "cine-hub-server\\Interfaces\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T15:14:59.611Z",
               "EditorCaption": ""
             }
           ]

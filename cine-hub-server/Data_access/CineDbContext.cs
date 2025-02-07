@@ -19,13 +19,16 @@ namespace cine_hub_server.Data_access
             base.OnModelCreating(builder);
 
             builder.HasDefaultSchema("identity");
-            
+
+          
+
             builder.Entity<Cinema>().ToTable("Cinemas", "app");
             builder.Entity<Film>().ToTable("Films", "app");
             builder.Entity<Ticket>().ToTable("Tickets", "app");
             builder.Entity<Genre>().ToTable("Genres", "app");
             builder.Entity<FilmGenre>().ToTable("FilmGenres", "app");
             builder.Entity<Session>().ToTable("Sessions", "app");
+    
             builder.Entity<Auditorium>().ToTable("Auditoriums", "app");
             builder.Entity<User>().ToTable("Users", "app");
 
