@@ -3,7 +3,7 @@
     public class Auditorium
     {
         public string Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; }        
         public int RowCount { get; set; }    
         public int SeatsPerRow { get; set; } 
 

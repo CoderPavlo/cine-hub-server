@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\cine-hub-server",
+    "\\cine-hub-server\\DTOs\\Auditorium",
+    "\\cine-hub-server\\DTOs\\Genre",
+    "\\cine-hub-server\\DTOs\\Session",
+    "\\cine-hub-server\\DTOs\\Ticket",
+    "\\cine-hub-server\\DTOs\\User",
+    "\\cine-hub-server\\Migrations",
+    "\\cine-hub-server\\Models",
+    "\\cine-hub-server\\Repositories"
   ],
-  "SelectedNode": "\\cine-hub-server.sln",
+  "SelectedNode": "\\cine-hub-server\\appsettings.Development.json",
   "PreviewInSolutionExplorer": false
 }
