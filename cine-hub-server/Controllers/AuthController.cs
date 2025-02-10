@@ -1,5 +1,4 @@
-﻿
-using cine_hub_server.Dto;
+﻿using cine_hub_server.DTOs;
 using cine_hub_server.Interfaces;
 using cine_hub_server.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -24,7 +23,7 @@ namespace cine_hub_server.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto model)
+        public async Task<IActionResult> Register([FromBody] RegisterDTO model)
         {
             var user = new User
             {
@@ -50,7 +49,7 @@ namespace cine_hub_server.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto model)
+        public async Task<IActionResult> Login([FromBody] LoginDTO model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
@@ -64,7 +63,7 @@ namespace cine_hub_server.Controllers
         }
 
         [HttpPost("refresh")]
-        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDto model)
+        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDTO model)
         {
             try
             {

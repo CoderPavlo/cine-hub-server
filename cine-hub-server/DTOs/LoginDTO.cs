@@ -1,6 +1,6 @@
-﻿namespace cine_hub_server.Dto
+﻿namespace cine_hub_server.DTOs
 {
-    public class LoginDto
+    public class LoginDTO
     {
         public string Email { get; set; }
         public string Password { get; set; }
