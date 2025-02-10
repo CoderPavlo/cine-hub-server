@@ -1,4 +1,5 @@
 ﻿using cine_hub_server.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -7,7 +8,7 @@ using System.Reflection.Emit;
 
 namespace cine_hub_server.Data_access
 {
-    public class CineDbContext : IdentityDbContext<User>
+    public class CineDbContext : IdentityDbContext<User, IdentityRole, string>
     {
         
         public CineDbContext(DbContextOptions<CineDbContext> options)
