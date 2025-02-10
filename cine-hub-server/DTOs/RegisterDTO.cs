@@ -1,6 +1,6 @@
-﻿namespace cine_hub_server.Dto
+﻿namespace cine_hub_server.DTOs
 {
-    public class RegisterDto
+    public class RegisterDTO
     {
         public string Name { get; set; }
         public string Surname { get; set; }
