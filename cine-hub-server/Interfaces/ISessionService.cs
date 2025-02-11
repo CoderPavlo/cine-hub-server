@@ -9,5 +9,8 @@ namespace cine_hub_server.Interfaces
         void Create(CreateSessionDto sessionDto);
         void Update(string id, UpdateSessionDto sessionDto);
         void Delete(string id);
+
+        IEnumerable<SessionResponseDto> GetSessionsByCinemaAndStartTime(string cinemaId, DateTime startTime);
+        IEnumerable<SessionResponseDto> GetSessionsByCinemaStartTimeAndFilmId(string cinemaId, DateTime startTime, int filmId);
     }
 }

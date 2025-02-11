@@ -91,6 +91,7 @@ namespace cine_hub_server.Data_access
                         EndTime = DateTime.UtcNow.AddHours(4),
                         FormatType = "IMAX",
                         Price = 250,
+                        FilmId = 1,
                         FilmName = "Inception",
                         CinemaId = auditoriumsFromDb[0].CinemaId,
                         AuditoriumId = auditoriumsFromDb[0].Id
@@ -102,6 +103,7 @@ namespace cine_hub_server.Data_access
                         EndTime = DateTime.UtcNow.AddHours(7),
                         FormatType = "4DX",
                         Price = 300,
+                        FilmId = 0,
                         FilmName = "The Dark Knight",
                         CinemaId = auditoriumsFromDb[1].CinemaId,
                         AuditoriumId = auditoriumsFromDb[1].Id
@@ -113,6 +115,7 @@ namespace cine_hub_server.Data_access
                         EndTime = DateTime.UtcNow.AddHours(10),
                         FormatType = "VIP",
                         Price = 500,
+                        FilmId = 2,
                         FilmName = "Interstellar",
                         CinemaId = auditoriumsFromDb[2].CinemaId,
                         AuditoriumId = auditoriumsFromDb[2].Id

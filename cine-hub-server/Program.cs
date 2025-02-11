@@ -17,7 +17,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(ISessionRepository), typeof(SessionRepository));
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<ISessionService, SessionService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
