@@ -12,8 +12,8 @@ using cine_hub_server.Data_access;
 namespace cine_hub_server.Migrations
 {
     [DbContext(typeof(CineDbContext))]
-    [Migration("20250206155255_AddSessionAudTable")]
-    partial class AddSessionAudTable
+    [Migration("20250211203113_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -198,109 +198,24 @@ namespace cine_hub_server.Migrations
                     b.ToTable("Cinemas", "app");
                 });
 
-            modelBuilder.Entity("cine_hub_server.Models.Film", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("AgeRestriction")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Cast")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Director")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("DurationTime")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PosterUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<decimal>("Ratings")
-                        .HasColumnType("numeric");
-
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("ReleaseDuration")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("TrailerUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Films", "app");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.FilmGenre", b =>
-                {
-                    b.Property<string>("FilmId")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FilmId1")
-                        .HasColumnType("text");
-
-                    b.Property<string>("GenreId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("FilmId");
-
-                    b.HasIndex("FilmId1");
-
-                    b.HasIndex("GenreId");
-
-                    b.ToTable("FilmGenres", "app");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.Genre", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Genres", "app");
-                });
-
             modelBuilder.Entity("cine_hub_server.Models.Session", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("AuditoriumId")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("CinemaId")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateOnly>("EndDate")
-                        .HasColumnType("date");
-
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("FilmId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("FilmId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("FilmName")
                         .IsRequired()
@@ -313,34 +228,16 @@ namespace cine_hub_server.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
-                    b.Property<DateOnly>("StartDate")
-                        .HasColumnType("date");
-
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CinemaId");
-
-                    b.HasIndex("FilmId");
-
-                    b.ToTable("Sessions", "app");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.SessionAuditorium", b =>
-                {
-                    b.Property<string>("SessionId")
-                        .HasColumnType("text");
-
-                    b.Property<string>("AuditoriumId")
-                        .HasColumnType("text");
-
-                    b.HasKey("SessionId", "AuditoriumId");
-
                     b.HasIndex("AuditoriumId");
 
-                    b.ToTable("SessionAuditoriums", "app");
+                    b.HasIndex("CinemaId");
+
+                    b.ToTable("Sessions", "app");
                 });
 
             modelBuilder.Entity("cine_hub_server.Models.Ticket", b =>
@@ -511,59 +408,23 @@ namespace cine_hub_server.Migrations
                     b.Navigation("Cinema");
                 });
 
-            modelBuilder.Entity("cine_hub_server.Models.FilmGenre", b =>
+            modelBuilder.Entity("cine_hub_server.Models.Session", b =>
                 {
-                    b.HasOne("cine_hub_server.Models.Film", "Film")
-                        .WithMany("FilmGenres")
-                        .HasForeignKey("FilmId1");
-
-                    b.HasOne("cine_hub_server.Models.Genre", "Genre")
-                        .WithMany("FilmGenres")
-                        .HasForeignKey("GenreId")
+                    b.HasOne("cine_hub_server.Models.Auditorium", "Auditorium")
+                        .WithMany("Sessions")
+                        .HasForeignKey("AuditoriumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Film");
-
-                    b.Navigation("Genre");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.Session", b =>
-                {
                     b.HasOne("cine_hub_server.Models.Cinema", "Cinema")
                         .WithMany()
                         .HasForeignKey("CinemaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("cine_hub_server.Models.Film", "Film")
-                        .WithMany("Sessions")
-                        .HasForeignKey("FilmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cinema");
-
-                    b.Navigation("Film");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.SessionAuditorium", b =>
-                {
-                    b.HasOne("cine_hub_server.Models.Auditorium", "Auditorium")
-                        .WithMany("SessionAuditoriums")
-                        .HasForeignKey("AuditoriumId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("cine_hub_server.Models.Session", "Session")
-                        .WithMany("SessionAuditoriums")
-                        .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Auditorium");
 
-                    b.Navigation("Session");
+                    b.Navigation("Cinema");
                 });
 
             modelBuilder.Entity("cine_hub_server.Models.Ticket", b =>
@@ -587,7 +448,7 @@ namespace cine_hub_server.Migrations
 
             modelBuilder.Entity("cine_hub_server.Models.Auditorium", b =>
                 {
-                    b.Navigation("SessionAuditoriums");
+                    b.Navigation("Sessions");
                 });
 
             modelBuilder.Entity("cine_hub_server.Models.Cinema", b =>
@@ -595,22 +456,8 @@ namespace cine_hub_server.Migrations
                     b.Navigation("Auditoriums");
                 });
 
-            modelBuilder.Entity("cine_hub_server.Models.Film", b =>
-                {
-                    b.Navigation("FilmGenres");
-
-                    b.Navigation("Sessions");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.Genre", b =>
-                {
-                    b.Navigation("FilmGenres");
-                });
-
             modelBuilder.Entity("cine_hub_server.Models.Session", b =>
                 {
-                    b.Navigation("SessionAuditoriums");
-
                     b.Navigation("Tickets");
                 });
 

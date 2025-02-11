@@ -1,6 +1,7 @@
 using cine_hub_server.Data_access;
 using cine_hub_server.Interfaces;
 using cine_hub_server.Models;
+using cine_hub_server.Repositories;
 using cine_hub_server.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -16,7 +17,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddScoped<ISessionService, SessionService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddSingleton(_ =>
               builder.Configuration.GetSection(nameof(JwtOptions)).Get<JwtOptions>()!);
