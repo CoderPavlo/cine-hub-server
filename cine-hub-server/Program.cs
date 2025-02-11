@@ -106,6 +106,7 @@ app.UseCors("AllowConfiguredOrigins");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<cine_hub_server.Exceptions.ExceptionMiddleware>();
 
 app.MapControllers();
 
