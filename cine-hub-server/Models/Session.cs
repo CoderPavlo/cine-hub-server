@@ -12,8 +12,8 @@ namespace cine_hub_server.Models
         public string FormatType { get; set; }
         public decimal Price { get; set; }
 
-        public string FilmId { get; set; }
-        public Film Film { get; set; }
+        public int FilmId { get; set; }
+        
         public string FilmName { get; set; }
         public string CinemaId { get; set; }
         public Cinema Cinema { get; set; }
