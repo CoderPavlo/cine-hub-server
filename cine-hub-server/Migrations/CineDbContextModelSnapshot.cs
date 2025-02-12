@@ -195,91 +195,6 @@ namespace cine_hub_server.Migrations
                     b.ToTable("Cinemas", "app");
                 });
 
-            modelBuilder.Entity("cine_hub_server.Models.Film", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("AgeRestriction")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Cast")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Director")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("DurationTime")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PosterUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<decimal>("Ratings")
-                        .HasColumnType("numeric");
-
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("ReleaseDuration")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("TrailerUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Films", "app");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.FilmGenre", b =>
-                {
-                    b.Property<string>("FilmId")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FilmId1")
-                        .HasColumnType("text");
-
-                    b.Property<string>("GenreId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("FilmId");
-
-                    b.HasIndex("FilmId1");
-
-                    b.HasIndex("GenreId");
-
-                    b.ToTable("FilmGenres", "app");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.Genre", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Genres", "app");
-                });
-
             modelBuilder.Entity("cine_hub_server.Models.Session", b =>
                 {
                     b.Property<string>("Id")
@@ -296,9 +211,8 @@ namespace cine_hub_server.Migrations
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("FilmId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("FilmId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("FilmName")
                         .IsRequired()
@@ -319,8 +233,6 @@ namespace cine_hub_server.Migrations
                     b.HasIndex("AuditoriumId");
 
                     b.HasIndex("CinemaId");
-
-                    b.HasIndex("FilmId");
 
                     b.ToTable("Sessions", "app");
                 });
@@ -493,23 +405,6 @@ namespace cine_hub_server.Migrations
                     b.Navigation("Cinema");
                 });
 
-            modelBuilder.Entity("cine_hub_server.Models.FilmGenre", b =>
-                {
-                    b.HasOne("cine_hub_server.Models.Film", "Film")
-                        .WithMany("FilmGenres")
-                        .HasForeignKey("FilmId1");
-
-                    b.HasOne("cine_hub_server.Models.Genre", "Genre")
-                        .WithMany("FilmGenres")
-                        .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("Genre");
-                });
-
             modelBuilder.Entity("cine_hub_server.Models.Session", b =>
                 {
                     b.HasOne("cine_hub_server.Models.Auditorium", "Auditorium")
@@ -524,17 +419,9 @@ namespace cine_hub_server.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("cine_hub_server.Models.Film", "Film")
-                        .WithMany("Sessions")
-                        .HasForeignKey("FilmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Auditorium");
 
                     b.Navigation("Cinema");
-
-                    b.Navigation("Film");
                 });
 
             modelBuilder.Entity("cine_hub_server.Models.Ticket", b =>
@@ -564,18 +451,6 @@ namespace cine_hub_server.Migrations
             modelBuilder.Entity("cine_hub_server.Models.Cinema", b =>
                 {
                     b.Navigation("Auditoriums");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.Film", b =>
-                {
-                    b.Navigation("FilmGenres");
-
-                    b.Navigation("Sessions");
-                });
-
-            modelBuilder.Entity("cine_hub_server.Models.Genre", b =>
-                {
-                    b.Navigation("FilmGenres");
                 });
 
             modelBuilder.Entity("cine_hub_server.Models.Session", b =>

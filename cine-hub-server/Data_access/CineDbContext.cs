@@ -24,10 +24,10 @@ namespace cine_hub_server.Data_access
           
 
             builder.Entity<Cinema>().ToTable("Cinemas", "app");
-            builder.Entity<Film>().ToTable("Films", "app");
+           // builder.Entity<Film>().ToTable("Films", "app");
             builder.Entity<Ticket>().ToTable("Tickets", "app");
-            builder.Entity<Genre>().ToTable("Genres", "app");
-            builder.Entity<FilmGenre>().ToTable("FilmGenres", "app");
+           // builder.Entity<Genre>().ToTable("Genres", "app");
+            //builder.Entity<FilmGenre>().ToTable("FilmGenres", "app");
             builder.Entity<Session>().ToTable("Sessions", "app");
     
             builder.Entity<Auditorium>().ToTable("Auditoriums", "app");
@@ -37,9 +37,9 @@ namespace cine_hub_server.Data_access
         }
         public DbSet<Auditorium> Auditoriums { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
-        public DbSet<Film> Films { get; set; }
-        public DbSet<FilmGenre> FilmGenres { get; set; }
-        public DbSet<Genre> Genres { get; set; }
+       
+        
+        
         public DbSet<Session> Sessions { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
 

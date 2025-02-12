@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace cine_hub_server.Migrations
 {
     /// <inheritdoc />
-    public partial class IdentityAside : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -44,42 +44,6 @@ namespace cine_hub_server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cinemas", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Films",
-                schema: "app",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "text", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Cast = table.Column<string>(type: "text", nullable: false),
-                    Ratings = table.Column<decimal>(type: "numeric", nullable: false),
-                    AgeRestriction = table.Column<string>(type: "text", nullable: false),
-                    DurationTime = table.Column<int>(type: "integer", nullable: false),
-                    Director = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    TrailerUrl = table.Column<string>(type: "text", nullable: false),
-                    PosterUrl = table.Column<string>(type: "text", nullable: false),
-                    ReleaseDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    ReleaseDuration = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Films", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Genres",
-                schema: "app",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "text", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Genres", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,33 +117,6 @@ namespace cine_hub_server.Migrations
                         column: x => x.CinemaId,
                         principalSchema: "app",
                         principalTable: "Cinemas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "FilmGenres",
-                schema: "app",
-                columns: table => new
-                {
-                    FilmId = table.Column<string>(type: "text", nullable: false),
-                    FilmId1 = table.Column<string>(type: "text", nullable: true),
-                    GenreId = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FilmGenres", x => x.FilmId);
-                    table.ForeignKey(
-                        name: "FK_FilmGenres_Films_FilmId1",
-                        column: x => x.FilmId1,
-                        principalSchema: "app",
-                        principalTable: "Films",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_FilmGenres_Genres_GenreId",
-                        column: x => x.GenreId,
-                        principalSchema: "app",
-                        principalTable: "Genres",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -288,7 +225,8 @@ namespace cine_hub_server.Migrations
                     EndTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     FormatType = table.Column<string>(type: "text", nullable: false),
                     Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    FilmId = table.Column<string>(type: "text", nullable: false),
+                    FilmId = table.Column<int>(type: "integer", nullable: false),
+                    FilmName = table.Column<string>(type: "text", nullable: false),
                     CinemaId = table.Column<string>(type: "text", nullable: false),
                     AuditoriumId = table.Column<string>(type: "text", nullable: false)
                 },
@@ -307,13 +245,6 @@ namespace cine_hub_server.Migrations
                         column: x => x.CinemaId,
                         principalSchema: "app",
                         principalTable: "Cinemas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Sessions_Films_FilmId",
-                        column: x => x.FilmId,
-                        principalSchema: "app",
-                        principalTable: "Films",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -387,18 +318,6 @@ namespace cine_hub_server.Migrations
                 column: "CinemaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FilmGenres_FilmId1",
-                schema: "app",
-                table: "FilmGenres",
-                column: "FilmId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_FilmGenres_GenreId",
-                schema: "app",
-                table: "FilmGenres",
-                column: "GenreId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Sessions_AuditoriumId",
                 schema: "app",
                 table: "Sessions",
@@ -409,12 +328,6 @@ namespace cine_hub_server.Migrations
                 schema: "app",
                 table: "Sessions",
                 column: "CinemaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Sessions_FilmId",
-                schema: "app",
-                table: "Sessions",
-                column: "FilmId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tickets_SessionId",
@@ -466,20 +379,12 @@ namespace cine_hub_server.Migrations
                 schema: "identity");
 
             migrationBuilder.DropTable(
-                name: "FilmGenres",
-                schema: "app");
-
-            migrationBuilder.DropTable(
                 name: "Tickets",
                 schema: "app");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles",
                 schema: "identity");
-
-            migrationBuilder.DropTable(
-                name: "Genres",
-                schema: "app");
 
             migrationBuilder.DropTable(
                 name: "Sessions",
@@ -491,10 +396,6 @@ namespace cine_hub_server.Migrations
 
             migrationBuilder.DropTable(
                 name: "Auditoriums",
-                schema: "app");
-
-            migrationBuilder.DropTable(
-                name: "Films",
                 schema: "app");
 
             migrationBuilder.DropTable(

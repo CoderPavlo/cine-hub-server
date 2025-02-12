@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
-using cine_hub_server.DTOs.Film;
+using cine_hub_server.DTOs.Auditorium;
+using cine_hub_server.DTOs.Cinema;
+using cine_hub_server.DTOs.Session;
+using cine_hub_server.Models;
 using cine_hub_server.Models;
 
 namespace cine_hub_server.Helpers
@@ -8,13 +11,52 @@ namespace cine_hub_server.Helpers
     {
         public MappingProfile()
         {
-            CreateMap<Film, FilmResponseDto>()
-                .ForMember(dest => dest.Genres, opt => opt.MapFrom(src =>
-                    src.FilmGenres.Select(fg => fg.Genre.Name)));
-            CreateMap<CreateFilmDto, Film>()
-                .ForMember(dest => dest.FilmGenres, opt => opt.Ignore());
-            CreateMap<UpdateFilmDto, Film>()
-                .ForMember(dest => dest.FilmGenres, opt => opt.Ignore());
+            CreateMap<Session, SessionResponseDto>()
+               .ForMember(dest => dest.CinemaLocation, opt => opt.MapFrom(src => src.Cinema.Location))
+               .ForMember(dest => dest.AuditoriumName, opt => opt.MapFrom(src => src.Auditorium.Name))
+               .ForMember(dest => dest.FilmName, opt => opt.MapFrom(src => src.FilmName));
+
+            CreateMap<CreateSessionDto, Session>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Cinema, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Auditorium, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Tickets, opt => opt.Ignore()); 
+
+            CreateMap<UpdateSessionDto, Session>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) 
+                .ForMember(dest => dest.FilmId, opt => opt.Ignore()) 
+                .ForMember(dest => dest.CinemaId, opt => opt.Ignore()) 
+                .ForMember(dest => dest.AuditoriumId, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Cinema, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Auditorium, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Tickets, opt => opt.Ignore()); 
+
+            // Мапінг для Cinema
+            CreateMap<Cinema, CinemaResponseDto>()
+                .ForMember(dest => dest.AuditoriumNames, opt => opt.MapFrom(src => src.Auditoriums.Select(a => a.Name).ToList()));
+
+            CreateMap<CreateCinemaDto, Cinema>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Auditoriums, opt => opt.Ignore()); 
+
+            CreateMap<UpdateCinemaDto, Cinema>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Auditoriums, opt => opt.Ignore()); 
+
+            // Мапінг для Auditorium
+            CreateMap<Auditorium, AuditoriumResponseDto>()
+                .ForMember(dest => dest.CinemaName, opt => opt.MapFrom(src => src.Cinema.Location));
+
+            CreateMap<CreateAuditoriumDto, Auditorium>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Cinema, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Sessions, opt => opt.Ignore()); 
+
+            CreateMap<UpdateAuditoriumDto, Auditorium>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()) 
+                .ForMember(dest => dest.CinemaId, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Cinema, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Sessions, opt => opt.Ignore()); 
         }
     }
 }

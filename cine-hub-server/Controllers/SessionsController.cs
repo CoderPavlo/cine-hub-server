@@ -59,5 +59,21 @@ namespace cine_hub_server.Controllers
             _sessionService.Delete(id);
             return Ok("Session deleted");
         }
+
+        
+        [HttpGet("by-cinema-and-time")]
+        public IActionResult GetByCinemaAndStartTime([FromQuery] string cinemaId, [FromQuery] DateTime startTime)
+        {
+            var sessions = _sessionService.GetSessionsByCinemaAndStartTime(cinemaId, startTime);
+            return Ok(sessions);
+        }
+
+        
+        [HttpGet("by-cinema-time-and-film")]
+        public IActionResult GetByCinemaStartTimeAndFilmId([FromQuery] string cinemaId, [FromQuery] DateTime startTime, [FromQuery] int filmId)
+        {
+            var sessions = _sessionService.GetSessionsByCinemaStartTimeAndFilmId(cinemaId, startTime, filmId);
+            return Ok(sessions);
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace cine_hub_server.DTOs.Session
         public DateTime EndTime { get; set; }
         public string FormatType { get; set; }
         public decimal Price { get; set; }
-        public string FilmId { get; set; }
+        public int FilmId { get; set; }
         public string CinemaId { get; set; }
         public string AuditoriumId { get; set; }
     }
