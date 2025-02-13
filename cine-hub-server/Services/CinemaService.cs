@@ -28,6 +28,7 @@ namespace cine_hub_server.Services
         public void Create(CreateCinemaDto cinemaDto)
         {
             var cinema = _mapper.Map<Cinema>(cinemaDto);
+            cinema.Id = Guid.NewGuid().ToString();
             _cinemaRepo.Insert(cinema);
             _cinemaRepo.Save();
         }
