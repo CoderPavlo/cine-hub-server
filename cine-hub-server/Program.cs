@@ -20,8 +20,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(ISessionRepository), typeof(SessionRepository));
+builder.Services.AddScoped(typeof(ICinemaRepository), typeof(CinemaRepository));
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<ISessionService, SessionService>();
+builder.Services.AddScoped<ICinemaService, CinemaService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddSingleton(_ =>
               builder.Configuration.GetSection(nameof(JwtOptions)).Get<JwtOptions>()!);
