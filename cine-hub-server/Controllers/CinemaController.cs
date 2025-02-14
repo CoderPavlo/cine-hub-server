@@ -23,7 +23,7 @@ namespace cine_hub_server.Controllers
         public async Task<IActionResult> GetAllPagination([FromQuery] int page = 1, [FromQuery] int itemsPerPage = 10)
         {
             if (page < 1 || itemsPerPage < 1)
-                return BadRequest("Page number and items per page must be greater than 0.");
+                return BadRequest(new { message = "Page number and items per page must be greater than 0." });
 
             var cinemas = await _cinemaService.GetAllPagination(page, itemsPerPage);
             return Ok(cinemas);
@@ -34,8 +34,7 @@ namespace cine_hub_server.Controllers
         {
             var cinema = _cinemaService.GetById(id);
             if (cinema == null)
-                return NotFound("Cinema not found");
-
+                return NotFound(new { message = "Cinema not found" });
             return Ok(cinema);
         }
 
@@ -45,7 +44,7 @@ namespace cine_hub_server.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             _cinemaService.Create(cinemaDto);
-            return Ok("Cinema created");
+            return Ok(new { message = "Cinema created" });
         }
 
         [HttpPut("{id}")]
@@ -54,7 +53,7 @@ namespace cine_hub_server.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             _cinemaService.Update(id, cinemaDto);
-            return Ok("Cinema updated");
+            return Ok(new { message = "Cinema updated" });
         }
 
         [HttpDelete("{id}")]
@@ -62,7 +61,7 @@ namespace cine_hub_server.Controllers
         public IActionResult Delete([FromRoute] string id)
         {
             _cinemaService.Delete(id);
-            return Ok("Cinema deleted");
+            return Ok(new { message = "Cinema deleted" });
         }
 
     }

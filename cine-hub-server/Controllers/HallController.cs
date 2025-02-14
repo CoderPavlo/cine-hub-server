@@ -23,7 +23,7 @@ namespace cine_hub_server.Controllers
         public async Task<IActionResult> GetAllPagination([FromQuery] int page = 1, [FromQuery] int itemsPerPage = 10, [FromQuery] string? cinemaId = null)
         {
             if (page < 1 || itemsPerPage < 1)
-                return BadRequest("Page number and items per page must be greater than 0.");
+                return BadRequest(new { message = "Page number and items per page must be greater than 0." });
 
             var halls = await _hallService.GetAllPagination(page, itemsPerPage, cinemaId);
             return Ok(halls);
@@ -34,7 +34,7 @@ namespace cine_hub_server.Controllers
         {
             var hall = _hallService.GetById(id);
             if (hall == null)
-                return NotFound("Hall not found");
+                return NotFound(new { message = "Hall not found" });
 
             return Ok(hall);
         }
@@ -45,7 +45,7 @@ namespace cine_hub_server.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             _hallService.Create(hallDto);
-            return Ok("Hall created");
+            return Ok(new { message = "Hall created" });
         }
 
         [HttpPut("{id}")]
@@ -54,7 +54,7 @@ namespace cine_hub_server.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             _hallService.Update(id, hallDto);
-            return Ok("Hall updated");
+            return Ok(new { message = "Hall updated" });
         }
 
         [HttpDelete("{id}")]
@@ -62,7 +62,7 @@ namespace cine_hub_server.Controllers
         public IActionResult Delete([FromRoute] string id)
         {
             _hallService.Delete(id);
-            return Ok("Hall deleted");
+            return Ok(new { message = "Hall deleted" });
         }
 
     }

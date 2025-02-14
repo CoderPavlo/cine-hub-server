@@ -32,8 +32,7 @@ namespace cine_hub_server.Helpers
                 .ForMember(dest => dest.Tickets, opt => opt.Ignore()); 
 
             // Мапінг для Cinema
-            CreateMap<Cinema, CinemaResponseDto>()
-                .ForMember(dest => dest.AuditoriumNames, opt => opt.MapFrom(src => src.Auditoriums.Select(a => a.Name).ToList()));
+            CreateMap<Cinema, CinemaResponseDto>();
 
             CreateMap<CreateCinemaDto, Cinema>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore()) 

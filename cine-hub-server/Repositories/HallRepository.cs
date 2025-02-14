@@ -20,6 +20,7 @@ namespace cine_hub_server.Repositories
             int totalResults = await query.CountAsync();
             int totalPages = (int)Math.Ceiling(totalResults / (double)itemsPerPage);
             var results = await query
+                .Include(h=>h.Cinema)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage)
                 .ToListAsync();

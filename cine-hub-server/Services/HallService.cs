@@ -37,7 +37,6 @@ namespace cine_hub_server.Services
 
             var hall = _mapper.Map<Auditorium>(hallDto);
             hall.Id = Guid.NewGuid().ToString();
-            hall.Cinema = cinema;
             _hallRepo.Insert(hall);
             _hallRepo.Save();
         }
