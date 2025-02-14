@@ -9,6 +9,7 @@ namespace cine_hub_server.DTOs.User
         public string Name { get; set; }
         public string Surname { get; set; }
         public DateTime Birthday { get; set; }
+        public string Email { get; set; }
         public ICollection<string> TicketIds { get; set; }
     }
 
