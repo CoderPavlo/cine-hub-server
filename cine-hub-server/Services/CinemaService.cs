@@ -58,7 +58,7 @@ namespace cine_hub_server.Services
         {
             var cinema = await _cinemaRepo.GetAllPagination(page, itemsPerPage);
             return new PaginationResponseDto<CinemaResponseDto>(
-               cinema.TotalPages, cinema.TotalResults, cinema.Page,
+               cinema.Total_pages, cinema.Total_results, cinema.Page,
                _mapper.Map<IEnumerable<CinemaResponseDto>>(cinema.Results)
              );
         }
