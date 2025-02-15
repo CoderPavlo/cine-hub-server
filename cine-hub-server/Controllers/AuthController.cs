@@ -63,19 +63,19 @@ namespace cine_hub_server.Controllers
         }
 
         [HttpPost("refresh")]
-        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDTO model)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> RefreshToken()
         {
             try
             {
-                var principal = _jwtService.GetClaimsFromExpiredToken(model.Token);
-                var userId = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-                if (userId == null)
-                    return Unauthorized(new { message = "Invalid refresh token" });
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
                 var user = await _userManager.FindByIdAsync(userId);
+
                 if (user == null)
-                    return Unauthorized(new { message = "User not found" });
+                {
+                    return NotFound(new { message = "User not found" });
+                }
 
                 var roles = await _userManager.GetRolesAsync(user);
                 var newAccessToken = _jwtService.CreateAccessToken(user);

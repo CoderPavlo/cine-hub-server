@@ -7,6 +7,5 @@ namespace cine_hub_server.Interfaces
     {
         string CreateAccessToken(User user);
         string CreateRefreshToken(User user);
-        ClaimsPrincipal GetClaimsFromExpiredToken(string token);
     }
 }

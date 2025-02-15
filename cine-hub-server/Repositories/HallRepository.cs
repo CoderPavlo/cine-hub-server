@@ -14,13 +14,13 @@ namespace cine_hub_server.Repositories
         }
         public async Task<PaginationResponseDto<Auditorium>> GetAllPagination(int page, int itemsPerPage, string? cinemaId)
         {
-            IQueryable<Auditorium> query = dbSet;
+            IQueryable<Auditorium> query = dbSet
+                .Include(h => h.Cinema);
             if (!string.IsNullOrEmpty(cinemaId))
                 query = query.Where(a => a.Cinema.Id == cinemaId);
             int totalResults = await query.CountAsync();
             int totalPages = (int)Math.Ceiling(totalResults / (double)itemsPerPage);
             var results = await query
-                .Include(h=>h.Cinema)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage)
                 .ToListAsync();
