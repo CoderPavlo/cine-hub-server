@@ -1,6 +1,7 @@
 ﻿using cine_hub_server.Data_access;
 using cine_hub_server.Interfaces;
 using cine_hub_server.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace cine_hub_server.Repositories
 {
@@ -10,15 +11,33 @@ namespace cine_hub_server.Repositories
         {
         }
 
-        public IEnumerable<Session> GetSessionsByCinemaAndStartTime(string cinemaId, DateTime startTime)
+        public override IEnumerable<Session> GetAll()
         {
-            return dbSet.Where(s => s.CinemaId == cinemaId && s.StartTime == startTime).ToList();
+            return Get(includeProperties: "Cinema,Auditorium");
+        }
+        public override Session GetByID(object id)  
+        {
+            return Get(
+                filter: s => s.Id == id,
+                includeProperties: "Cinema,Auditorium"
+            ).FirstOrDefault();  
+
         }
 
-        
+        public IEnumerable<Session> GetSessionsByCinemaAndStartTime(string cinemaId, DateTime startTime)
+        {
+            return Get(
+                filter: s => s.CinemaId == cinemaId && s.StartTime == startTime,
+                includeProperties: "Cinema,Auditorium"
+            );
+        }
+
         public IEnumerable<Session> GetSessionsByCinemaStartTimeAndFilmId(string cinemaId, DateTime startTime, int filmId)
         {
-            return dbSet.Where(s => s.CinemaId == cinemaId && s.StartTime == startTime && s.FilmId == filmId).ToList();
+            return Get(
+                filter: s => s.CinemaId == cinemaId && s.StartTime == startTime && s.FilmId == filmId,
+                includeProperties: "Cinema,Auditorium"
+            );
         }
     }
 }
