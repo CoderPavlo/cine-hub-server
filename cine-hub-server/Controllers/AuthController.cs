@@ -63,19 +63,19 @@ namespace cine_hub_server.Controllers
         }
 
         [HttpPost("refresh")]
-        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDTO model)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> RefreshToken()
         {
             try
             {
-                var principal = _jwtService.GetClaimsFromExpiredToken(model.Token);
-                var userId = principal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-                if (userId == null)
-                    return Unauthorized("Invalid refresh token");
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
                 var user = await _userManager.FindByIdAsync(userId);
+
                 if (user == null)
-                    return Unauthorized("User not found");
+                {
+                    return NotFound(new { message = "User not found" });
+                }
 
                 var roles = await _userManager.GetRolesAsync(user);
                 var newAccessToken = _jwtService.CreateAccessToken(user);
@@ -85,7 +85,7 @@ namespace cine_hub_server.Controllers
             }
             catch
             {
-                return Unauthorized("Invalid token");
+                return Unauthorized(new { message = "Invalid token" });
             }
         }
         
@@ -102,13 +102,13 @@ namespace cine_hub_server.Controllers
             }
             if (!userClaims.Any())
             {
-                return Unauthorized("User is not authenticated");
+                return Unauthorized(new { message = "User is not authenticated" });
             }
 
             var usernameClaim = userClaims.FirstOrDefault(c => c.Type == "FullName");
             if (usernameClaim == null)
             {
-                return Unauthorized("User name is missing in claims");
+                return Unauthorized(new { message = "User name is missing in claims" });
             }
 
             return Ok(new { message = "User is authenticated", username = usernameClaim.Value });

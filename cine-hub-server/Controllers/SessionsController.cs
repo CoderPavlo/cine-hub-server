@@ -1,9 +1,13 @@
 ﻿using cine_hub_server.DTOs.Session;
 using cine_hub_server.Interfaces;
 using cine_hub_server.Models;
+using cine_hub_server.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections;
 using System.Collections.Generic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace cine_hub_server.Controllers
 {
@@ -19,9 +23,13 @@ namespace cine_hub_server.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllPagination([FromQuery] int page = 1, [FromQuery] int itemsPerPage = 10, [FromQuery] string? cinemaId = null, [FromQuery] string? hallId = null, [FromQuery] int? filmId = null, [FromQuery] DateTime? date = null)
         {
-            return Ok(_sessionService.GetAll());
+            if (page < 1 || itemsPerPage < 1)
+                return BadRequest(new { message = "Page number and items per page must be greater than 0." });
+
+            var sessions = await _sessionService.GetSessionsPagination(page, itemsPerPage, cinemaId, hallId, filmId, date);
+            return Ok(sessions);
         }
 
         [HttpGet("{id}")]
@@ -29,51 +37,63 @@ namespace cine_hub_server.Controllers
         {
             var session = _sessionService.GetById(id);
             if (session == null)
-                return NotFound("Session not found");
+                return NotFound(new { message = "Session not found" });
 
             return Ok(session);
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public IActionResult Create([FromBody] CreateSessionDto sessionDto)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public IActionResult Create([FromBody] CreateSessionsDto sessionsDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            _sessionService.Create(sessionDto);
-            return Ok("Session created");
+            var endDate = sessionsDto.EndDate;
+            if (!endDate.HasValue)
+                endDate = sessionsDto.StartDateTime;
+            Console.WriteLine(endDate);
+            var i = 0;
+            for (DateTime day = sessionsDto.StartDateTime; day <= endDate; day = day.AddDays(1))
+            {
+                _sessionService.Create(new CreateSessionDto
+                {
+                    StartTime = day,
+                    EndTime = day.AddMinutes(sessionsDto.Runtime),
+                    FormatType = sessionsDto.FormatType,
+                    Price = sessionsDto.Price,
+                    FilmId = sessionsDto.FilmId,
+                    FilmName = sessionsDto.FilmName,
+                    CinemaId = sessionsDto.CinemaId,
+                    AuditoriumId = sessionsDto.AuditoriumId,
+                });
+                i++;
+            }
+            return Ok(new { message = i.ToString() + " sessions created" });
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin")]
-        public IActionResult Update([FromRoute] string id, [FromBody] UpdateSessionDto sessionDto)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public IActionResult Update([FromRoute] string id, [FromBody] UpdateSessionRequestDto sessionDto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            _sessionService.Update(id, sessionDto);
-            return Ok("Session updated");
+            _sessionService.Update(id, new UpdateSessionDto
+            {
+                StartTime = sessionDto.StartTime,
+                EndTime = sessionDto.StartTime.AddMinutes(sessionDto.Runtime),
+                FormatType = sessionDto.FormatType,
+                Price = sessionDto.Price,
+                FilmId = sessionDto.FilmId,
+                FilmName = sessionDto.FilmName,
+            });
+            return Ok(new { message = "Session updated" });
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public IActionResult Delete([FromRoute] string id)
         {
             _sessionService.Delete(id);
-            return Ok("Session deleted");
+            return Ok(new { message = "Session deleted" });
         }
-
         
-        [HttpGet("by-cinema-and-time")]
-        public IActionResult GetByCinemaAndStartTime([FromQuery] string cinemaId, [FromQuery] DateTime startTime)
-        {
-            var sessions = _sessionService.GetSessionsByCinemaAndStartTime(cinemaId, startTime);
-            return Ok(sessions);
-        }
-
-        
-        [HttpGet("by-cinema-time-and-film")]
-        public IActionResult GetByCinemaStartTimeAndFilmId([FromQuery] string cinemaId, [FromQuery] DateTime startTime, [FromQuery] int filmId)
-        {
-            var sessions = _sessionService.GetSessionsByCinemaStartTimeAndFilmId(cinemaId, startTime, filmId);
-            return Ok(sessions);
-        }
     }
 }

@@ -6,7 +6,6 @@ namespace cine_hub_server.DTOs.Cinema
     {
         public string Id { get; set; }
         public string Location { get; set; }
-        public ICollection<string> AuditoriumNames { get; set; }
     }
 
     public class CreateCinemaDto

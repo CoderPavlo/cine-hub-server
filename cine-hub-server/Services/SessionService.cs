@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using cine_hub_server.DTOs.Auditorium;
+using cine_hub_server.DTOs;
 using cine_hub_server.DTOs.Session;
 using cine_hub_server.Interfaces;
 using cine_hub_server.Models;
 using cine_hub_server.Repositories;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace cine_hub_server.Services
 {
@@ -19,12 +22,6 @@ namespace cine_hub_server.Services
             _mapper = mapper;
         }
 
-        public IEnumerable<SessionResponseDto> GetAll()
-        {
-            var sessions = _sessionRepo.GetAll();
-            return _mapper.Map<IEnumerable<SessionResponseDto>>(sessions);
-        }
-
         public SessionResponseDto GetById(string id)
         {
             var session = _sessionRepo.GetByID(id);
@@ -34,6 +31,7 @@ namespace cine_hub_server.Services
         public void Create(CreateSessionDto sessionDto)
         {
             var session = _mapper.Map<Session>(sessionDto);
+            session.Id = Guid.NewGuid().ToString();
             _sessionRepo.Insert(session);
             _sessionRepo.Save();
         }
@@ -54,17 +52,13 @@ namespace cine_hub_server.Services
             _sessionRepo.Delete(session);
             _sessionRepo.Save();
         }
-        public IEnumerable<SessionResponseDto> GetSessionsByCinemaAndStartTime(string cinemaId, DateTime startTime)
+        public async Task<PaginationResponseDto<SessionResponseDto>> GetSessionsPagination(int page, int itemsPerPage, string? cinemaId, string? hallId, int? filmId, DateTime? date)
         {
-            var sessions = _sessionRepo.GetSessionsByCinemaAndStartTime(cinemaId, startTime);
-            return _mapper.Map<IEnumerable<SessionResponseDto>>(sessions);
-        }
-
-      
-        public IEnumerable<SessionResponseDto> GetSessionsByCinemaStartTimeAndFilmId(string cinemaId, DateTime startTime, int filmId)
-        {
-            var sessions = _sessionRepo.GetSessionsByCinemaStartTimeAndFilmId(cinemaId, startTime, filmId);
-            return _mapper.Map<IEnumerable<SessionResponseDto>>(sessions);
+            var sessions = await _sessionRepo.GetSessionsPagination(page, itemsPerPage, cinemaId, hallId, filmId, date);
+            return new PaginationResponseDto<SessionResponseDto>(
+                sessions.Total_pages, sessions.Total_results, sessions.Page,
+                _mapper.Map<IEnumerable<SessionResponseDto>>(sessions.Results)
+            );
         }
     }
 }
