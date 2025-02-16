@@ -50,9 +50,9 @@ namespace cine_hub_server.Repositories
         public override Session GetByID(object id)  
         {
             return Get(
-                filter: s => s.Id == id,
-                includeProperties: "Cinema,Auditorium"
-            ).FirstOrDefault();  
+                    filter: s => s.Id == id,    
+                    includeProperties: "Cinema,Auditorium,Tickets"
+                    ).FirstOrDefault();
 
         }
     }

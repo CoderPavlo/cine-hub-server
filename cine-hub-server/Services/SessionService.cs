@@ -25,7 +25,10 @@ namespace cine_hub_server.Services
         public SessionResponseDto GetById(string id)
         {
             var session = _sessionRepo.GetByID(id);
-            return session == null ? null : _mapper.Map<SessionResponseDto>(session);
+            var response = _mapper.Map<SessionResponseDto>(session);
+            Console.WriteLine($"Mapped SessionResponseDto: {System.Text.Json.JsonSerializer.Serialize(response)}");
+            return response;
+           // return session == null ? null : _mapper.Map<SessionResponseDto>(session);
         }
 
         public void Create(CreateSessionDto sessionDto)
@@ -51,6 +54,10 @@ namespace cine_hub_server.Services
             if (session == null) return;
             _sessionRepo.Delete(session);
             _sessionRepo.Save();
+        }
+        public Session GetSessionEntityById(string id)
+        {
+            return _sessionRepo.GetByID(id);
         }
         public async Task<PaginationResponseDto<SessionResponseDto>> GetSessionsPagination(int page, int itemsPerPage, string? cinemaId, string? hallId, int? filmId, DateTime? date)
         {
