@@ -10,6 +10,7 @@ namespace cine_hub_server.Interfaces
         void Create(CreateSessionDto sessionDto);
         void Update(string id, UpdateSessionDto sessionDto);
         void Delete(string id);
+        Session GetSessionEntityById(string id);
         Task<PaginationResponseDto<SessionResponseDto>> GetSessionsPagination(int page, int itemsPerPage, string? cinemaId, string? hallId, int? filmId, DateTime? date);
     }
 }

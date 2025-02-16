@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections;
 using System.Collections.Generic;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Newtonsoft.Json;
 
 namespace cine_hub_server.Controllers
 {
@@ -35,7 +36,9 @@ namespace cine_hub_server.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById([FromRoute] string id)
         {
+          
             var session = _sessionService.GetById(id);
+           
             if (session == null)
                 return NotFound(new { message = "Session not found" });
 
@@ -94,6 +97,43 @@ namespace cine_hub_server.Controllers
             _sessionService.Delete(id);
             return Ok(new { message = "Session deleted" });
         }
-        
+       
+        [HttpGet("{id}/available-seats")]
+        public IActionResult GetAvailableSeats([FromRoute] string id)
+        {
+            var session = _sessionService.GetSessionEntityById(id);
+            
+
+            if (session == null)
+                return NotFound(new { message = "Session not found" });
+
+            var auditorium = session.Auditorium;
+           
+            if (auditorium == null)
+                return NotFound(new { message = "Auditorium not found" });
+
+          
+            var allSeats = new List<(int row, int seat)>();
+            for (int r = 1; r <= auditorium.RowCount; r++)
+            {
+                for (int s = 1; s <= auditorium.SeatsPerRow; s++)
+                {
+                    allSeats.Add((r, s));
+                }
+            }
+          
+            
+            var occupiedSeats = session.Tickets?.Select(t => (t.RowNumber, t.SeatNumber)).ToHashSet() ?? new HashSet<(int, int)>();
+
+            
+            var availableSeats = allSeats.Where(seat => !occupiedSeats.Contains(seat)).ToList();
+
+            var formattedSeats = availableSeats.Select(s => new { row = s.Item1, seat = s.Item2 }).ToList();
+            var json = JsonConvert.SerializeObject(formattedSeats, Formatting.Indented);
+
+            return Ok(json);
+            
+        }
+
     }
 }
