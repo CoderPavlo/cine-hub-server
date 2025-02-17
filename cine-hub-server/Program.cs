@@ -126,12 +126,8 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-
-    // Отримання контексту бази даних і застосування міграцій
-    var dbContext = services.GetRequiredService<CineDbContext>();
-    await dbContext.Database.MigrateAsync(); // Автоматично застосовує міграції
-    await SeedData.Initialize(services);
+    var configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
+    await SeedData.Initialize(services, configuration);
 }
 
 app.Run();

@@ -1,0 +1,292 @@
+[
+  {
+    "startTime": "2025-02-17T09:00:00.000Z",
+    "runtime": 106,
+    "formatType": "2D",
+    "price": 170,
+    "filmId": 516729,
+    "filmName": "Paddington in Peru",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "gf34917f1-f8c3-41b1-ad78-35c3333b53ec"
+  },
+  {
+    "startTime": "2025-02-17T09:30:00.000Z",
+    "runtime": 89,
+    "formatType": "3D",
+    "price": 170,
+    "filmId": 774370,
+    "filmName": "Dog Man",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "f939499a-0a67-4848-b813-8d6b3de6e289"
+  },
+  {
+    "startTime": "2025-02-17T10:00:00.000Z",
+    "runtime": 118,
+    "formatType": "2D",
+    "price": 160,
+    "filmId": 762509,
+    "filmName": "Mufasa: The Lion King",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "290eafbd-104f-4d7d-8df4-028f3fc84aa1"
+  },
+  {
+    "startTime": "2025-02-17T10:30:00.000Z",
+    "runtime": 119,
+    "formatType": "2D",
+    "price": 160,
+    "filmId": 822119,
+    "filmName": "Captain America: Brave New World",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "b19a32f9-bef0-48a7-a18a-b40e0e816f3f"
+  },
+  {
+    "startTime": "2025-02-17T11:00:00.000Z",
+    "runtime": 110,
+    "formatType": "ONYX",
+    "price": 450,
+    "filmId": 939243,
+    "filmName": "Sonic the Hedgehog 3",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "2c4e1f7f-8fd6-4ca2-aade-077957960ef7"
+  },
+  {
+    "startTime": "2025-02-17T11:30:00.000Z",
+    "runtime": 127,
+    "formatType": "2D",
+    "price": 200,
+    "filmId": 539972,
+    "filmName": "Kraven the Hunter",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "6c509c38-c204-459b-b705-1933d89d15d7"
+  },
+  {
+    "startTime": "2025-02-17T12:00:00.000Z",
+    "runtime": 97,
+    "formatType": "3D",
+    "price": 250,
+    "filmId": 1302916,
+    "filmName": "Heart Eyes",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "b38f26ae-8340-4194-9791-44c70982a02b"
+  },
+  {
+    "startTime": "2025-02-17T12:30:00.000Z",
+    "runtime": 90,
+    "formatType": "2D",
+    "price": 200,
+    "filmId": 1189423,
+    "filmName": "The Sloth Lane",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "a35bb584-798a-4001-b2f9-4479ecd11750"
+  },
+  {
+    "startTime": "2025-02-17T13:00:00.000Z",
+    "runtime": 106,
+    "formatType": "2D",
+    "price": 170,
+    "filmId": 516729,
+    "filmName": "Paddington in Peru",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "99b50517-282d-457a-a58e-f02aca0a33bd"
+  },
+  {
+    "startTime": "2025-02-17T13:30:00.000Z",
+    "runtime": 89,
+    "formatType": "2D",
+    "price": 170,
+    "filmId": 774370,
+    "filmName": "Dog Man",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "9196f782-ff6d-4abd-8afa-a5cf46b1d449"
+  },
+  {
+    "startTime": "2025-02-17T14:00:00.000Z",
+    "runtime": 118,
+    "formatType": "2D",
+    "price": 160,
+    "filmId": 762509,
+    "filmName": "Mufasa: The Lion King",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "gf34917f1-f8c3-41b1-ad78-35c3333b53ec"
+  },
+  {
+    "startTime": "2025-02-17T14:30:00.000Z",
+    "runtime": 119,
+    "formatType": "2D",
+    "price": 160,
+    "filmId": 822119,
+    "filmName": "Captain America: Brave New World",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "f939499a-0a67-4848-b813-8d6b3de6e289"
+  },
+  {
+    "startTime": "2025-02-17T15:00:00.000Z",
+    "runtime": 110,
+    "formatType": "ONYX",
+    "price": 400,
+    "filmId": 939243,
+    "filmName": "Sonic the Hedgehog 3",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "290eafbd-104f-4d7d-8df4-028f3fc84aa1"
+  },
+  {
+    "startTime": "2025-02-17T15:30:00.000Z",
+    "runtime": 127,
+    "formatType": "2D",
+    "price": 200,
+    "filmId": 539972,
+    "filmName": "Kraven the Hunter",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "b19a32f9-bef0-48a7-a18a-b40e0e816f3f"
+  },
+  {
+    "startTime": "2025-02-17T16:00:00.000Z",
+    "runtime": 97,
+    "formatType": "2D",
+    "price": 200,
+    "filmId": 1302916,
+    "filmName": "Heart Eyes",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "2c4e1f7f-8fd6-4ca2-aade-077957960ef7"
+  },
+  {
+    "startTime": "2025-02-17T16:30:00.000Z",
+    "runtime": 90,
+    "formatType": "2D",
+    "price": 200,
+    "filmId": 1189423,
+    "filmName": "The Sloth Lane",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "6c509c38-c204-459b-b705-1933d89d15d7"
+  },
+  {
+    "startTime": "2025-02-17T17:00:00.000Z",
+    "runtime": 106,
+    "formatType": "3D",
+    "price": 300,
+    "filmId": 516729,
+    "filmName": "Paddington in Peru",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "b38f26ae-8340-4194-9791-44c70982a02b"
+  },
+  {
+    "startTime": "2025-02-17T17:30:00.000Z",
+    "runtime": 89,
+    "formatType": "2D",
+    "price": 170,
+    "filmId": 774370,
+    "filmName": "Dog Man",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "a35bb584-798a-4001-b2f9-4479ecd11750"
+  },
+  {
+    "startTime": "2025-02-17T18:00:00.000Z",
+    "runtime": 118,
+    "formatType": "2D",
+    "price": 160,
+    "filmId": 762509,
+    "filmName": "Mufasa: The Lion King",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "99b50517-282d-457a-a58e-f02aca0a33bd"
+  },
+  {
+    "startTime": "2025-02-17T18:30:00.000Z",
+    "runtime": 119,
+    "formatType": "4D",
+    "price": 250,
+    "filmId": 822119,
+    "filmName": "Captain America: Brave New World",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "9196f782-ff6d-4abd-8afa-a5cf46b1d449"
+  },
+  {
+    "startTime": "2025-02-17T19:00:00.000Z",
+    "runtime": 110,
+    "formatType": "2D",
+    "price": 160,
+    "filmId": 939243,
+    "filmName": "Sonic the Hedgehog 3",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "gf34917f1-f8c3-41b1-ad78-35c3333b53ec"
+  },
+  {
+    "startTime": "2025-02-17T19:30:00.000Z",
+    "runtime": 127,
+    "formatType": "2D",
+    "price": 200,
+    "filmId": 539972,
+    "filmName": "Kraven the Hunter",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "f939499a-0a67-4848-b813-8d6b3de6e289"
+  },
+  {
+    "startTime": "2025-02-17T20:00:00.000Z",
+    "runtime": 97,
+    "formatType": "3D",
+    "price": 200,
+    "filmId": 1302916,
+    "filmName": "Heart Eyes",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "290eafbd-104f-4d7d-8df4-028f3fc84aa1"
+  },
+  {
+    "startTime": "2025-02-17T20:30:00.000Z",
+    "runtime": 90,
+    "formatType": "2D",
+    "price": 200,
+    "filmId": 1189423,
+    "filmName": "The Sloth Lane",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "b19a32f9-bef0-48a7-a18a-b40e0e816f3f"
+  },
+  {
+    "startTime": "2025-02-17T21:00:00.000Z",
+    "runtime": 106,
+    "formatType": "2D",
+    "price": 170,
+    "filmId": 516729,
+    "filmName": "Paddington in Peru",
+    "cinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23",
+    "auditoriumId": "2c4e1f7f-8fd6-4ca2-aade-077957960ef7"
+  },
+  {
+    "startTime": "2025-02-17T21:30:00.000Z",
+    "runtime": 89,
+    "formatType": "2D",
+    "price": 170,
+    "filmId": 774370,
+    "filmName": "Dog Man",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "6c509c38-c204-459b-b705-1933d89d15d7"
+  },
+  {
+    "startTime": "2025-02-17T22:00:00.000Z",
+    "runtime": 118,
+    "formatType": "ONYX",
+    "price": 400,
+    "filmId": 762509,
+    "filmName": "Mufasa: The Lion King",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "b38f26ae-8340-4194-9791-44c70982a02b"
+  },
+  {
+    "startTime": "2025-02-17T22:30:00.000Z",
+    "runtime": 119,
+    "formatType": "2D",
+    "price": 160,
+    "filmId": 822119,
+    "filmName": "Captain America: Brave New World",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "a35bb584-798a-4001-b2f9-4479ecd11750"
+  },
+  {
+    "startTime": "2025-02-17T23:00:00.000Z",
+    "runtime": 110,
+    "formatType": "2D",
+    "price": 160,
+    "filmId": 939243,
+    "filmName": "Sonic the Hedgehog 3",
+    "cinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63",
+    "auditoriumId": "99b50517-282d-457a-a58e-f02aca0a33bd"
+  }
+]

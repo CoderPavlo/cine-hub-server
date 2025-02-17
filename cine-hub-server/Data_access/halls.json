@@ -1,0 +1,72 @@
+[
+  {
+    "Id": "gf34917f1-f8c3-41b1-ad78-35c3333b53ec",
+    "Name": "IMAX Hall",
+    "RowCount": 10,
+    "SeatsPerRow": 20,
+    "CinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23"
+  },
+  {
+    "Id": "f939499a-0a67-4848-b813-8d6b3de6e289",
+    "Name": "4DX Hall",
+    "RowCount": 8,
+    "SeatsPerRow": 15,
+    "CinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23"
+  },
+  {
+    "Id": "290eafbd-104f-4d7d-8df4-028f3fc84aa1",
+    "Name": "VIP Hall",
+    "RowCount": 5,
+    "SeatsPerRow": 10,
+    "CinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23"
+  },
+  {
+    "Id": "b19a32f9-bef0-48a7-a18a-b40e0e816f3f",
+    "Name": "Atmos Hall",
+    "RowCount": 12,
+    "SeatsPerRow": 22,
+    "CinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23"
+  },
+  {
+    "Id": "2c4e1f7f-8fd6-4ca2-aade-077957960ef7",
+    "Name": "Premium Hall",
+    "RowCount": 6,
+    "SeatsPerRow": 12,
+    "CinemaId": "7c1ce5e8-23f0-4709-b65e-8f2c2ea76a23"
+  },
+  {
+    "Id": "6c509c38-c204-459b-b705-1933d89d15d7",
+    "Name": "Hall 1",
+    "RowCount": 15,
+    "SeatsPerRow": 20,
+    "CinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63"
+  },
+  {
+    "Id": "b38f26ae-8340-4194-9791-44c70982a02b",
+    "Name": "Hall 2",
+    "RowCount": 14,
+    "SeatsPerRow": 23,
+    "CinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63"
+  },
+  {
+    "Id": "a35bb584-798a-4001-b2f9-4479ecd11750",
+    "Name": "Family Hall",
+    "RowCount": 10,
+    "SeatsPerRow": 18,
+    "CinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63"
+  },
+  {
+    "Id": "99b50517-282d-457a-a58e-f02aca0a33bd",
+    "Name": "3D Hall",
+    "RowCount": 9,
+    "SeatsPerRow": 16,
+    "CinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63"
+  },
+  {
+    "Id": "9196f782-ff6d-4abd-8afa-a5cf46b1d449",
+    "Name": "Hall 3",
+    "RowCount": 8,
+    "SeatsPerRow": 14,
+    "CinemaId": "db92d7bd-db04-4a71-9b77-8c87dd129d63"
+  }
+]
