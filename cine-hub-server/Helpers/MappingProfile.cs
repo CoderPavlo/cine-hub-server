@@ -15,7 +15,6 @@ namespace cine_hub_server.Helpers
             CreateMap<Session, SessionResponseDto>()
                .ForMember(dest => dest.CinemaLocation, opt => opt.MapFrom(src => src.Cinema.Location))
                .ForMember(dest => dest.AuditoriumName, opt => opt.MapFrom(src => src.Auditorium.Name))
-               .ForMember(dest => dest.OccupiedSeats, opt => opt.MapFrom(src => src.Tickets.Select(t => new SeatDto { RowNumber = t.RowNumber, SeatNumber = t.SeatNumber })))
                .ForMember(dest => dest.FilmName, opt => opt.MapFrom(src => src.FilmName));
 
             CreateMap<CreateSessionDto, Session>()
