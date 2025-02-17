@@ -22,11 +22,21 @@ namespace cine_hub_server.Services
             _mapper = mapper;
         }
 
+        public int GetRowCount(string id)
+        {
+            var session = _sessionRepo.GetByID(id);
+            return session.Auditorium.RowCount;
+        }
+
+        public int GetSeatsCount(string id)
+        {
+            var session = _sessionRepo.GetByID(id);
+            return session.Auditorium.SeatsPerRow;
+        }
         public SessionResponseDto GetById(string id)
         {
             var session = _sessionRepo.GetByID(id);
             var response = _mapper.Map<SessionResponseDto>(session);
-            Console.WriteLine($"Mapped SessionResponseDto: {System.Text.Json.JsonSerializer.Serialize(response)}");
             return response;
            // return session == null ? null : _mapper.Map<SessionResponseDto>(session);
         }
