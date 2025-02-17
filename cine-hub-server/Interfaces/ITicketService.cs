@@ -10,7 +10,9 @@ namespace cine_hub_server.Interfaces
         void Create(CreateTicketDto ticketDto);
             
         void Delete(string id);
-         
+        public Task<PaginationResponseDto<TicketResponseDto>> GetTicketsPagination(int page, int itemsPerPage, string userId);
+        IEnumerable<TicketSeatDto> GetReservedSeats(string sessionId);
+
       }
     
 }

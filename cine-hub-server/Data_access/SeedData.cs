@@ -1,20 +1,44 @@
 ﻿using cine_hub_server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using System.Text.Json;
+using Microsoft.Extensions.Configuration;
+using System.Text.Json.Serialization;
 namespace cine_hub_server.Data_access
 {
     public class SeedData
     {
-        public static async Task Initialize(IServiceProvider serviceProvider)
-        {
-            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            var userManager = serviceProvider.GetRequiredService<UserManager<User>>();
-            var context = serviceProvider.GetRequiredService<CineDbContext>();
 
-            // Переконуємося, що міграції застосовані
-            await context.Database.MigrateAsync();
-            // Перевірка ролей та їх додавання, якщо необхідно
+        public class SessionSeed
+        {
+            public DateTime StartTime { get; set; }
+            public int Runtime { get; set; }
+            public string FormatType { get; set; }
+            public decimal Price { get; set; }
+            public int FilmId { get; set; }
+            public string FilmName { get; set; }
+            public string CinemaId { get; set; }
+            public string AuditoriumId { get; set; }
+        }
+
+        static async Task<T> readSeedData<T>(string path)
+        {
+            var json = await File.ReadAllTextAsync(path);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true, 
+                Converters = { new JsonStringEnumConverter() } 
+            };
+            var data = JsonSerializer.Deserialize<T>(json, options);
+            if (data == null)
+            {
+                throw new Exception("Data is invalid or missing.");
+            }
+            return data;
+        }
+
+        static async Task addRoles(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        {
             string[] roleNames = { "Admin", "User" };
 
             foreach (var roleName in roleNames)
@@ -26,106 +50,93 @@ namespace cine_hub_server.Data_access
                     await roleManager.CreateAsync(role);
                 }
             }
-            // Перевірка, чи є в базі хоч один користувач з роллю "Admin"
+        }
+
+        static async Task createAdmin(UserManager<User> userManager, IConfiguration configuration)
+        {
             var adminUsers = await userManager.GetUsersInRoleAsync("Admin");
-            bool adminExists = adminUsers.Any();
-            if (!adminExists)
+            if (!adminUsers.Any())
             {
-                var adminUser = new User
+                var admin = await readSeedData<User>("Data_access/admin.json");
+                var adminPassword = configuration["AdminCredentials:Password"];
+                if (string.IsNullOrEmpty(adminPassword))
                 {
-                    UserName = "admin",
-                    Email = "admin@example.com",
-                    Name = "Admin",
-                    Surname = "User",
-                    Birthday = new DateTime(1990, 1, 1, 0, 0, 0, DateTimeKind.Utc),
-                    EmailConfirmed = true
-                };
-
-                var result = await userManager.CreateAsync(adminUser, "Admin@123"); // Надійний пароль
-
-                if (result.Succeeded)
-                {
-                    await userManager.AddToRoleAsync(adminUser, "Admin");
+                    throw new Exception("Admin password is missing in appsettings.json");
                 }
+                var result = await userManager.CreateAsync(admin, adminPassword);
+                if (result.Succeeded)
+                    await userManager.AddToRoleAsync(admin, "Admin");
             }
-            // Додавання кінотеатрів, якщо їх ще немає
+        }
+
+        static async Task addCinemas(CineDbContext context)
+        {
             if (!await context.Cinemas.AnyAsync())
             {
-                var cinemas = new List<Cinema>
-                {
-                    new Cinema { Id = Guid.NewGuid().ToString(), Location = "Kyiv, Ukraine" },
-                    new Cinema { Id = Guid.NewGuid().ToString(), Location = "Lviv, Ukraine" }
-                };
+                var cinemas = await readSeedData<List<Cinema>>("Data_access/cinemas.json");
 
                 await context.Cinemas.AddRangeAsync(cinemas);
                 await context.SaveChangesAsync();
             }
+        }
 
-            var cinemasFromDb = await context.Cinemas.ToListAsync();
-
-            // Додавання аудиторій, якщо їх ще немає
+        static async Task addHalls(CineDbContext context)
+        {
             if (!await context.Auditoriums.AnyAsync())
             {
-                var auditoriums = new List<Auditorium>
-                {
-                    new Auditorium { Id = Guid.NewGuid().ToString(), Name = "IMAX Hall", RowCount = 10, SeatsPerRow = 20, CinemaId = cinemasFromDb[0].Id },
-                    new Auditorium { Id = Guid.NewGuid().ToString(), Name = "4DX Hall", RowCount = 8, SeatsPerRow = 15, CinemaId = cinemasFromDb[0].Id },
-                    new Auditorium { Id = Guid.NewGuid().ToString(), Name = "VIP Hall", RowCount = 5, SeatsPerRow = 10, CinemaId = cinemasFromDb[1].Id }
-                };
+                var halls = await readSeedData<List<Auditorium>>("Data_access/halls.json");
 
-                await context.Auditoriums.AddRangeAsync(auditoriums);
+                await context.Auditoriums.AddRangeAsync(halls);
                 await context.SaveChangesAsync();
             }
+        }
 
-            var auditoriumsFromDb = await context.Auditoriums.ToListAsync();
-
-            // Додавання сеансів, якщо їх ще немає
+        static async Task addSessions(CineDbContext context)
+        {
             if (!await context.Sessions.AnyAsync())
             {
-                var sessions = new List<Session>
+                List<Session> sessionsList = new List<Session>();
+                var sessions = await readSeedData<List<SessionSeed>>("Data_access/sessions.json");
+                for (int i = 0; i < 30; i++)
                 {
-                    new Session
+                    DateTime day = DateTime.UtcNow.AddDays(i);
+                    foreach (var session in sessions)
                     {
-                        Id = Guid.NewGuid().ToString(),
-                        StartTime = DateTime.UtcNow.AddHours(2),
-                        EndTime = DateTime.UtcNow.AddHours(4),
-                        FormatType = "IMAX",
-                        Price = 250,
-                        FilmId = 1,
-                        FilmName = "Inception",
-                        CinemaId = auditoriumsFromDb[0].CinemaId,
-                        AuditoriumId = auditoriumsFromDb[0].Id
-                    },
-                    new Session
-                    {
-                        Id = Guid.NewGuid().ToString(),
-                        StartTime = DateTime.UtcNow.AddHours(5),
-                        EndTime = DateTime.UtcNow.AddHours(7),
-                        FormatType = "4DX",
-                        Price = 300,
-                        FilmId = 0,
-                        FilmName = "The Dark Knight",
-                        CinemaId = auditoriumsFromDb[1].CinemaId,
-                        AuditoriumId = auditoriumsFromDb[1].Id
-                    },
-                    new Session
-                    {
-                        Id = Guid.NewGuid().ToString(),
-                        StartTime = DateTime.UtcNow.AddHours(8),
-                        EndTime = DateTime.UtcNow.AddHours(10),
-                        FormatType = "VIP",
-                        Price = 500,
-                        FilmId = 2,
-                        FilmName = "Interstellar",
-                        CinemaId = auditoriumsFromDb[2].CinemaId,
-                        AuditoriumId = auditoriumsFromDb[2].Id
+                        DateTime date = new DateTime(day.Year, day.Month, day.Day, session.StartTime.Hour, session.StartTime.Minute, 0, DateTimeKind.Utc);
+                        sessionsList.Add(new Session
+                        {
+                            Id = Guid.NewGuid().ToString(),
+                            StartTime = date,
+                            EndTime = date.AddMinutes(session.Runtime),
+                            FormatType = session.FormatType,
+                            Price = session.Price,
+                            FilmId = session.FilmId,
+                            FilmName = session.FilmName,
+                            CinemaId = session.CinemaId,
+                            AuditoriumId = session.AuditoriumId,
+                        });
                     }
-                };
-
-                await context.Sessions.AddRangeAsync(sessions);
+                }
+                await context.Sessions.AddRangeAsync(sessionsList);
                 await context.SaveChangesAsync();
             }
-        
+        }
+        public static async Task Initialize(IServiceProvider serviceProvider, IConfiguration configuration)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = serviceProvider.GetRequiredService<UserManager<User>>();
+            var context = serviceProvider.GetRequiredService<CineDbContext>();
+
+            await context.Database.MigrateAsync();
+
+            await addRoles(userManager, roleManager);
+
+            await createAdmin(userManager, configuration);
+
+            await addCinemas(context);
+            await addHalls(context);
+            await addSessions(context);
+
     }
     }
 }

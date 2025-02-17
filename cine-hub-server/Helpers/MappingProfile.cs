@@ -15,7 +15,6 @@ namespace cine_hub_server.Helpers
             CreateMap<Session, SessionResponseDto>()
                .ForMember(dest => dest.CinemaLocation, opt => opt.MapFrom(src => src.Cinema.Location))
                .ForMember(dest => dest.AuditoriumName, opt => opt.MapFrom(src => src.Auditorium.Name))
-               .ForMember(dest => dest.OccupiedSeats, opt => opt.MapFrom(src => src.Tickets.Select(t => new SeatDto { RowNumber = t.RowNumber, SeatNumber = t.SeatNumber })))
                .ForMember(dest => dest.FilmName, opt => opt.MapFrom(src => src.FilmName));
 
             CreateMap<CreateSessionDto, Session>()
@@ -61,9 +60,16 @@ namespace cine_hub_server.Helpers
             // Мапінг Ticket
             CreateMap<Ticket, TicketResponseDto>()
                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Name))
-               .ForMember(dest => dest.FilmName, opt => opt.MapFrom(src => src.Session.FilmName));
+               .ForMember(dest => dest.FilmName, opt => opt.MapFrom(src => src.Session.FilmName))
+               .ForMember(dest => dest.CinemaLocation, opt => opt.MapFrom(src => src.Session.Cinema.Location))
+               .ForMember(dest => dest.HallName, opt => opt.MapFrom(src => src.Session.Auditorium.Name))
+               .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.Session.StartTime))
+               .ForMember(dest => dest.FormatType, opt => opt.MapFrom(src => src.Session.FormatType));
 
-            
+            CreateMap<Ticket, TicketSeatDto>()
+               .ForMember(dest => dest.Row, opt => opt.MapFrom(src => src.RowNumber))
+               .ForMember(dest => dest.Seat, opt => opt.MapFrom(src => src.SeatNumber));
+
             CreateMap<CreateTicketDto, Ticket>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore()) 
                 .ForMember(dest => dest.User, opt => opt.Ignore()) 

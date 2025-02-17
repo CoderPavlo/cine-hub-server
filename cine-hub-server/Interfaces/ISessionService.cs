@@ -12,5 +12,7 @@ namespace cine_hub_server.Interfaces
         void Delete(string id);
         Session GetSessionEntityById(string id);
         Task<PaginationResponseDto<SessionResponseDto>> GetSessionsPagination(int page, int itemsPerPage, string? cinemaId, string? hallId, int? filmId, DateTime? date);
+        int GetRowCount(string id);
+        int GetSeatsCount(string id);
     }
 }

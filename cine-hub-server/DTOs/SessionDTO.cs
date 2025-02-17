@@ -14,7 +14,6 @@ namespace cine_hub_server.DTOs.Session
         public int FilmId { get; set; }
         public string CinemaLocation { get; set; }
         public string AuditoriumName { get; set; }
-        public List<SeatDto> OccupiedSeats { get; set; }
     }
     public class SeatDto
     {
