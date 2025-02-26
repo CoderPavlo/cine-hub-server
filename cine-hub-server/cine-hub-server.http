@@ -1,6 +1,6 @@
 @cine_hub_server_HostAddress = http://localhost:5004
 
-GET {{cine_hub_server_HostAddress}}/weatherforecast/
+GET {{cine_hub_server_HostAddress}}
 Accept: application/json
 
 ###
